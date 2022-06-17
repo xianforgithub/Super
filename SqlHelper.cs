@@ -12,6 +12,7 @@ namespace LWDBJ
 {
     public static class SqlHelper
     {
+		string s="123";
         // 插入信息到数据库(scancz和weight)
         public static void InsertSQLData(string txt)
         {
