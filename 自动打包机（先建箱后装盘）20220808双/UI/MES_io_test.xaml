@@ -1,0 +1,530 @@
+﻿<Window x:Class="LWDBJ_自建_.UI.MES_io_test"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:LWDBJ_自建_.UI"
+             mc:Ignorable="d" 
+             Height="800" Width="1200" WindowStartupLocation="CenterScreen" Loaded="Window_Loaded">
+    <Grid>
+        <Grid.RowDefinitions >
+            <RowDefinition Height="30"></RowDefinition>
+            <RowDefinition ></RowDefinition>
+            <RowDefinition ></RowDefinition>
+            <RowDefinition ></RowDefinition>
+            <RowDefinition ></RowDefinition>
+            <RowDefinition ></RowDefinition>
+            <RowDefinition ></RowDefinition>
+            <RowDefinition Height="30"></RowDefinition>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions >
+            <ColumnDefinition></ColumnDefinition>
+            <ColumnDefinition></ColumnDefinition>
+        </Grid.ColumnDefinitions>
+        <Border Grid.Row="0" Grid.ColumnSpan="2" Background="#FFE1EAF2" BorderBrush="#FF637DAF" >
+            <Label Content="MES 接 口 测 试" HorizontalAlignment="Center" FontSize="18">
+                <Label.Effect>
+                    <DropShadowEffect/>
+                </Label.Effect>
+            </Label>
+        </Border>
+        <Border Grid.Row="7" Grid.ColumnSpan="2" Background="#FF5EAFE8" >
+            <ListBox Name="lsmessage"  ></ListBox>
+        </Border>
+
+        <Border Grid.Row="1" Grid.Column="0"  >
+            <Grid >
+                <Grid.RowDefinitions >
+                    <RowDefinition Height="30"></RowDefinition>
+                    <RowDefinition ></RowDefinition>
+                    <RowDefinition Height="10"></RowDefinition>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions >
+                    <ColumnDefinition></ColumnDefinition>
+                    <ColumnDefinition Width="200"></ColumnDefinition>
+                </Grid.ColumnDefinitions>
+                <Border Grid.Row="0" Grid.ColumnSpan="2" Background="#FFE1EAF2"  Width="200" HorizontalAlignment="Left" Margin="2 7 0 0" >
+                    <Label Content="登录接口" FontSize="12" HorizontalAlignment="Center"></Label>
+                </Border>
+                <Border Grid.Row="2" Grid.ColumnSpan="2" Background="#FF5EAFE8" Margin="0 0 15 0" ></Border>
+                <Border Grid.Row="1" Grid.Column="0">
+                    
+                    <StackPanel Orientation="Vertical">
+                        <WrapPanel Orientation="Horizontal" HorizontalAlignment="Center">
+                            <Label Content="工号:"></Label>
+                            <TextBox Name="tx_lname" Width="150" Margin="5 0 0 0"></TextBox>
+                        </WrapPanel>
+                        <WrapPanel Orientation="Horizontal" HorizontalAlignment="Center">
+                            <Label Content="M  I:"></Label>
+                            <TextBox Name="tx_lmi" Width="150" Margin="6 2 0 0"></TextBox>
+                        </WrapPanel>
+                        <WrapPanel Orientation="Horizontal" HorizontalAlignment="Center">
+                            <Label Content="密码:"></Label>
+                            <TextBox Name="tx_lpas" Width="150" Margin="6 2 0 0"></TextBox>
+                        </WrapPanel>
+                    </StackPanel>
+                </Border>
+               
+                <DockPanel Grid.Row="1" Grid.Column="1" HorizontalAlignment="Left">
+                    <Button  Name="bt_login"  Width="120" Height="30" Content="登录" DockPanel.Dock="Bottom" Click="bt_login_Click">
+                        <Button.Background >
+                            <RadialGradientBrush >
+                                <GradientStop Color="#FFA8B5BF" Offset="1"/>
+                                <GradientStop Color="White" Offset="0.577"/>
+                                <GradientStop Color="White" Offset="0.121"/>
+                                <GradientStop Color="White"/>
+                            </RadialGradientBrush>
+                        </Button.Background>
+                    </Button>
+                </DockPanel>
+            </Grid>
+        </Border>
+
+        <Border Grid.Row="2" Grid.Column="0"  >
+            <Grid >
+                <Grid.RowDefinitions >
+                    <RowDefinition Height="30"></RowDefinition>
+                    <RowDefinition ></RowDefinition>
+                    <RowDefinition Height="10"></RowDefinition>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions >
+                    <ColumnDefinition></ColumnDefinition>
+                    <ColumnDefinition Width="200"></ColumnDefinition>
+                </Grid.ColumnDefinitions>
+                <Border Grid.Row="0" Grid.ColumnSpan="2" Background="#FFE1EAF2"  Width="200" HorizontalAlignment="Left" Margin="2 7 0 0" >
+                    <Label Content="MI接口" FontSize="12" HorizontalAlignment="Center"></Label>
+                </Border>
+                <Border Grid.Row="2" Grid.ColumnSpan="2" Background="#FF5EAFE8" Margin="0 0 15 0" ></Border>
+                
+
+                <DockPanel Grid.Row="1" Grid.Column="1" HorizontalAlignment="Left">
+                    <Button  Name="bt_mi"  Width="120" Height="30" Content="获取MI" DockPanel.Dock="Bottom" Click="bt_mi_Click">
+                        <Button.Background >
+                            <RadialGradientBrush >
+                                <GradientStop Color="#FFA8B5BF" Offset="1"/>
+                                <GradientStop Color="White" Offset="0.577"/>
+                                <GradientStop Color="White" Offset="0.121"/>
+                                <GradientStop Color="White"/>
+                            </RadialGradientBrush>
+                        </Button.Background>
+                    </Button>
+                </DockPanel>
+            </Grid>
+        </Border>
+
+        <Border Grid.Row="3" Grid.Column="0"  >
+            <Grid >
+                <Grid.RowDefinitions >
+                    <RowDefinition Height="30"></RowDefinition>
+                    <RowDefinition ></RowDefinition>
+                    <RowDefinition Height="10"></RowDefinition>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions >
+                    <ColumnDefinition></ColumnDefinition>
+                    <ColumnDefinition Width="200"></ColumnDefinition>
+                </Grid.ColumnDefinitions>
+                <Border Grid.Row="0" Grid.ColumnSpan="2" Background="#FFE1EAF2"  Width="200" HorizontalAlignment="Left" Margin="2 7 0 0" >
+                    <Label Content="规格参数接口" FontSize="12" HorizontalAlignment="Center"></Label>
+                </Border>
+                <Border Grid.Row="2" Grid.ColumnSpan="2" Background="#FF5EAFE8" Margin="0 0 15 0" ></Border>
+                <Border Grid.Row="1" Grid.Column="0">
+
+                    <StackPanel Orientation="Vertical">
+                        <WrapPanel Orientation="Horizontal" HorizontalAlignment="Center">
+                            <Label Content="工艺名称:"></Label>
+                            <TextBox Name="tx_special" Width="150" Text="H74" Margin="5 0 0 0"></TextBox>
+                        </WrapPanel>
+                        
+                    </StackPanel>
+                </Border>
+
+                <DockPanel Grid.Row="1" Grid.Column="1" HorizontalAlignment="Left">
+                    <Button  Name="bt_special"  Width="120" Height="30" Content="获取工艺" DockPanel.Dock="Bottom" Click="bt_special_Click">
+                        <Button.Background >
+                            <RadialGradientBrush >
+                                <GradientStop Color="#FFA8B5BF" Offset="1"/>
+                                <GradientStop Color="White" Offset="0.577"/>
+                                <GradientStop Color="White" Offset="0.121"/>
+                                <GradientStop Color="White"/>
+                            </RadialGradientBrush>
+                        </Button.Background>
+                    </Button>
+                </DockPanel>
+            </Grid>
+        </Border>
+
+        <Border Grid.Row="4" Grid.Column="0"  >
+            <Grid >
+                <Grid.RowDefinitions >
+                    <RowDefinition Height="30"></RowDefinition>
+                    <RowDefinition ></RowDefinition>
+                    <RowDefinition Height="10"></RowDefinition>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions >
+                    <ColumnDefinition></ColumnDefinition>
+                    <ColumnDefinition Width="200"></ColumnDefinition>
+                </Grid.ColumnDefinitions>
+                <Border Grid.Row="0" Grid.ColumnSpan="2" Background="#FFE1EAF2"  Width="200" HorizontalAlignment="Left" Margin="2 7 0 0" >
+                    <Label Content="生成新箱号" FontSize="12" HorizontalAlignment="Center"></Label>
+                </Border>
+                <Border Grid.Row="2" Grid.ColumnSpan="2" Background="#FF5EAFE8" Margin="0 0 15 0"></Border>
+
+
+                <DockPanel Grid.Row="1" Grid.Column="1" HorizontalAlignment="Left">
+                    <Button  Name="bt_newbox"  Width="120" Height="30" Content="生成新箱号" DockPanel.Dock="Bottom" Click="bt_newbox_Click">
+                        <Button.Background >
+                            <RadialGradientBrush >
+                                <GradientStop Color="#FFA8B5BF" Offset="1"/>
+                                <GradientStop Color="White" Offset="0.577"/>
+                                <GradientStop Color="White" Offset="0.121"/>
+                                <GradientStop Color="White"/>
+                            </RadialGradientBrush>
+                        </Button.Background>
+                    </Button>
+                </DockPanel>
+            </Grid>
+        </Border>
+
+        <Border Grid.Row="5" Grid.Column="0"  >
+            <Grid >
+                <Grid.RowDefinitions >
+                    <RowDefinition Height="30"></RowDefinition>
+                    <RowDefinition ></RowDefinition>
+                    <RowDefinition Height="10"></RowDefinition>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions >
+                    <ColumnDefinition></ColumnDefinition>
+                    <ColumnDefinition Width="200"></ColumnDefinition>
+                </Grid.ColumnDefinitions>
+                <Border Grid.Row="0" Grid.ColumnSpan="2" Background="#FFE1EAF2"  Width="200" HorizontalAlignment="Left" Margin="2 7 0 0" >
+                    <Label Content="电芯分组接口" FontSize="12" HorizontalAlignment="Center"></Label>
+                </Border>
+                <Border Grid.Row="2" Grid.ColumnSpan="2" Background="#FF5EAFE8" Margin="0 0 15 0"></Border>
+                <Border Grid.Row="1" Grid.Column="0">
+
+                    <StackPanel Orientation="Vertical">
+                        <WrapPanel Orientation="Horizontal" HorizontalAlignment="Center">
+                            <Label Content="电芯编码:"></Label>
+                            <TextBox Name="tx_group" Width="150" Text="L2822061702728Q808X" Margin="5 0 0 0"></TextBox>
+                        </WrapPanel>
+
+                    </StackPanel>
+                </Border>
+
+                <DockPanel Grid.Row="1" Grid.Column="1" HorizontalAlignment="Left">
+                    <Button  Name="bt_group"  Width="120" Height="30" Content="分组" DockPanel.Dock="Bottom" Click="bt_group_Click">
+                        <Button.Background >
+                            <RadialGradientBrush >
+                                <GradientStop Color="#FFA8B5BF" Offset="1"/>
+                                <GradientStop Color="White" Offset="0.577"/>
+                                <GradientStop Color="White" Offset="0.121"/>
+                                <GradientStop Color="White"/>
+                            </RadialGradientBrush>
+                        </Button.Background>
+                    </Button>
+                </DockPanel>
+            </Grid>
+        </Border>
+
+        <Border Grid.Row="6" Grid.Column="0"  >
+            <Grid >
+                <Grid.RowDefinitions >
+                    <RowDefinition Height="30"></RowDefinition>
+                    <RowDefinition ></RowDefinition>
+                    <RowDefinition Height="10"></RowDefinition>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions >
+                    <ColumnDefinition></ColumnDefinition>
+                    <ColumnDefinition Width="200"></ColumnDefinition>
+                </Grid.ColumnDefinitions>
+                <Border Grid.Row="0" Grid.ColumnSpan="2" Background="#FFE1EAF2"  Width="200" HorizontalAlignment="Left" Margin="2 7 0 0" >
+                    <Label Content="条码绑箱接口" FontSize="12" HorizontalAlignment="Center"></Label>
+                </Border>
+                
+                <Border Grid.Row="1" Grid.Column="0">
+
+                    <StackPanel Orientation="Vertical">
+                        <WrapPanel Orientation="Horizontal" HorizontalAlignment="Center">
+                            <Label Content="箱号:"></Label>
+                            <TextBox Name="tx_pbox" Width="150" Text="LWJ9922070540002" Margin="5 0 0 0"></TextBox>
+                        </WrapPanel>
+                        <WrapPanel Orientation="Horizontal" HorizontalAlignment="Center">
+                            <Label Content="条码:"></Label>
+                            <TextBox Name="tx_psn" Width="150" Text="J9921082500384M5065" Margin="6 2 0 0"></TextBox>
+                        </WrapPanel>
+                        <WrapPanel Orientation="Horizontal" HorizontalAlignment="Center">
+                            <Label Content="位置:"></Label>
+                            <TextBox Name="tx_ploca" Width="150" Text="1" Margin="6 2 0 0"></TextBox>
+                        </WrapPanel>
+                    </StackPanel>
+                </Border>
+
+                <DockPanel Grid.Row="1" Grid.Column="1" HorizontalAlignment="Left">
+                    <Button  Name="bt_pack"  Width="120" Height="30" Content="绑箱" DockPanel.Dock="Bottom" Click="bt_pack_Click">
+                        <Button.Background >
+                            <RadialGradientBrush >
+                                <GradientStop Color="#FFA8B5BF" Offset="1"/>
+                                <GradientStop Color="White" Offset="0.577"/>
+                                <GradientStop Color="White" Offset="0.121"/>
+                                <GradientStop Color="White"/>
+                            </RadialGradientBrush>
+                        </Button.Background>
+                    </Button>
+                </DockPanel>
+            </Grid>
+        </Border>
+
+        <Border Grid.Row="1" Grid.Column="1"  >
+            <Grid >
+                <Grid.RowDefinitions >
+                    <RowDefinition Height="30"></RowDefinition>
+                    <RowDefinition ></RowDefinition>
+                    <RowDefinition Height="10"></RowDefinition>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions >
+                    <ColumnDefinition></ColumnDefinition>
+                    <ColumnDefinition Width="200"></ColumnDefinition>
+                </Grid.ColumnDefinitions>
+                <Border Grid.Row="0" Grid.ColumnSpan="2" Background="#FFE1EAF2"  Width="200" HorizontalAlignment="Left" Margin="2 7 0 0" >
+                    <Label Content="箱子状态更新接口" FontSize="12" HorizontalAlignment="Center"></Label>
+                </Border>
+                <Border Grid.Row="2" Grid.ColumnSpan="2" Background="#FF5EAFE8" ></Border>
+                <Border Grid.Row="1" Grid.Column="0">
+
+                    <StackPanel Orientation="Vertical">
+                        <WrapPanel Orientation="Horizontal" HorizontalAlignment="Center">
+                            <Label Content="箱号:"></Label>
+                            <TextBox Name="tx_usn" Width="150" Text="130822010" Margin="5 0 0 0"></TextBox>
+                        </WrapPanel>
+
+                    </StackPanel>
+                </Border>
+
+                <DockPanel Grid.Row="1" Grid.Column="1" HorizontalAlignment="Left">
+                    <Button  Name="bt_update"  Width="120" Height="30" Content="更新箱子状态" DockPanel.Dock="Bottom" Click="bt_update_Click">
+                        <Button.Background >
+                            <RadialGradientBrush >
+                                <GradientStop Color="#FFA8B5BF" Offset="1"/>
+                                <GradientStop Color="White" Offset="0.577"/>
+                                <GradientStop Color="White" Offset="0.121"/>
+                                <GradientStop Color="White"/>
+                            </RadialGradientBrush>
+                        </Button.Background>
+                    </Button>
+                </DockPanel>
+            </Grid>
+        </Border>
+
+        <Border Grid.Row="2" Grid.Column="1"  >
+            <Grid >
+                <Grid.RowDefinitions >
+                    <RowDefinition Height="30"></RowDefinition>
+                    <RowDefinition ></RowDefinition>
+                    <RowDefinition Height="10"></RowDefinition>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions >
+                    <ColumnDefinition></ColumnDefinition>
+                    <ColumnDefinition Width="200"></ColumnDefinition>
+                </Grid.ColumnDefinitions>
+                <Border Grid.Row="0" Grid.ColumnSpan="2" Background="#FFE1EAF2"  Width="200" HorizontalAlignment="Left" Margin="2 7 0 0" >
+                    <Label Content="称重上传接口" FontSize="12" HorizontalAlignment="Center"></Label>
+                </Border>
+                <Border Grid.Row="2" Grid.ColumnSpan="2" Background="#FF5EAFE8" ></Border>
+                <Border Grid.Row="1" Grid.Column="0">
+
+                    <StackPanel Orientation="Vertical">
+                        <WrapPanel Orientation="Horizontal" HorizontalAlignment="Center">
+                            <Label Content="重量:"></Label>
+                            <TextBox Name="tx_fweight" Width="150" Text="11" Margin="5 0 0 0"></TextBox>
+                        </WrapPanel>
+                        <WrapPanel Orientation="Horizontal" HorizontalAlignment="Center">
+                            <Label Content="箱号:"></Label>
+                            <TextBox Name="tx_fsn" Width="150" Text="LWJ9921091000325" Margin="5 0 0 0"></TextBox>
+                        </WrapPanel>
+
+                    </StackPanel>
+                </Border>
+
+                <DockPanel Grid.Row="1" Grid.Column="1" HorizontalAlignment="Left">
+                    <Button  Name="bt_fpack"  Width="120" Height="30" Content="称重上传" DockPanel.Dock="Bottom" Click="bt_fpack_Click">
+                        <Button.Background >
+                            <RadialGradientBrush >
+                                <GradientStop Color="#FFA8B5BF" Offset="1"/>
+                                <GradientStop Color="White" Offset="0.577"/>
+                                <GradientStop Color="White" Offset="0.121"/>
+                                <GradientStop Color="White"/>
+                            </RadialGradientBrush>
+                        </Button.Background>
+                    </Button>
+                </DockPanel>
+            </Grid>
+        </Border>
+
+        <Border Grid.Row="3" Grid.Column="1"  >
+            <Grid >
+                <Grid.RowDefinitions >
+                    <RowDefinition Height="30"></RowDefinition>
+                    <RowDefinition ></RowDefinition>
+                    <RowDefinition Height="10"></RowDefinition>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions >
+                    <ColumnDefinition></ColumnDefinition>
+                    <ColumnDefinition Width="200"></ColumnDefinition>
+                </Grid.ColumnDefinitions>
+                <Border Grid.Row="0" Grid.ColumnSpan="2" Background="#FFE1EAF2"  Width="200" HorizontalAlignment="Left" Margin="2 7 0 0" >
+                    <Label Content="记录打印信息接口" FontSize="12" HorizontalAlignment="Center"></Label>
+                </Border>
+                <Border Grid.Row="2" Grid.ColumnSpan="2" Background="#FF5EAFE8" ></Border>
+                <Border Grid.Row="1" Grid.Column="0">
+
+                    <StackPanel Orientation="Vertical">
+                        <WrapPanel Orientation="Horizontal" HorizontalAlignment="Center">
+                            <Label Content="箱号:"></Label>
+                            <TextBox Name="tx_rsn" Width="150" Text="LWJ9921091000325" Margin="5 0 0 0"></TextBox>
+                        </WrapPanel>
+
+                    </StackPanel>
+                </Border>
+
+                <DockPanel Grid.Row="1" Grid.Column="1" HorizontalAlignment="Left">
+                    <Button  Name="bt_recode"  Width="120" Height="30" Content="记录打印信息" DockPanel.Dock="Bottom" Click="bt_recode_Click">
+                        <Button.Background >
+                            <RadialGradientBrush >
+                                <GradientStop Color="#FFA8B5BF" Offset="1"/>
+                                <GradientStop Color="White" Offset="0.577"/>
+                                <GradientStop Color="White" Offset="0.121"/>
+                                <GradientStop Color="White"/>
+                            </RadialGradientBrush>
+                        </Button.Background>
+                    </Button>
+                </DockPanel>
+            </Grid>
+        </Border>
+
+        <Border Grid.Row="4" Grid.Column="1"  >
+            <Grid >
+                <Grid.RowDefinitions >
+                    <RowDefinition Height="30"></RowDefinition>
+                    <RowDefinition ></RowDefinition>
+                    <RowDefinition Height="10"></RowDefinition>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions >
+                    <ColumnDefinition></ColumnDefinition>
+                    <ColumnDefinition Width="200"></ColumnDefinition>
+                </Grid.ColumnDefinitions>
+                <Border Grid.Row="0" Grid.ColumnSpan="2" Background="#FFE1EAF2"  Width="200" HorizontalAlignment="Left" Margin="2 7 0 0" >
+                    <Label Content="打印箱号标签接口" FontSize="12" HorizontalAlignment="Center"></Label>
+                </Border>
+                <Border Grid.Row="2" Grid.ColumnSpan="2" Background="#FF5EAFE8" ></Border>
+                <Border Grid.Row="1" Grid.Column="0">
+
+                    <StackPanel Orientation="Vertical">
+                        <WrapPanel Orientation="Horizontal" HorizontalAlignment="Center">
+                            <Label Content="箱号:"></Label>
+                            <TextBox Name="tx_printsn" Width="150" Text="LWJ9921091000325" Margin="5 0 0 0"></TextBox>
+                        </WrapPanel>
+
+                    </StackPanel>
+                </Border>
+
+                <DockPanel Grid.Row="1" Grid.Column="1" HorizontalAlignment="Left">
+                    <Button  Name="bt_print"  Width="120" Height="30" Content="打印箱号" DockPanel.Dock="Bottom" Click="bt_print_Click">
+                        <Button.Background >
+                            <RadialGradientBrush >
+                                <GradientStop Color="#FFA8B5BF" Offset="1"/>
+                                <GradientStop Color="White" Offset="0.577"/>
+                                <GradientStop Color="White" Offset="0.121"/>
+                                <GradientStop Color="White"/>
+                            </RadialGradientBrush>
+                        </Button.Background>
+                    </Button>
+                </DockPanel>
+            </Grid>
+        </Border>
+
+        <Border Grid.Row="5" Grid.Column="1"  >
+            <Grid >
+                <Grid.RowDefinitions >
+                    <RowDefinition Height="30"></RowDefinition>
+                    <RowDefinition ></RowDefinition>
+                    <RowDefinition Height="10"></RowDefinition>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions >
+                    <ColumnDefinition></ColumnDefinition>
+                    <ColumnDefinition Width="200"></ColumnDefinition>
+                </Grid.ColumnDefinitions>
+                <Border Grid.Row="0" Grid.ColumnSpan="2" Background="#FFE1EAF2"  Width="200" HorizontalAlignment="Left" Margin="2 7 0 0" >
+                    <Label Content="解绑箱子接口" FontSize="12" HorizontalAlignment="Center"></Label>
+                </Border>
+                <Border Grid.Row="2" Grid.ColumnSpan="2" Background="#FF5EAFE8" ></Border>
+                <Border Grid.Row="1" Grid.Column="0">
+
+                    <StackPanel Orientation="Vertical">
+                        <WrapPanel Orientation="Horizontal" HorizontalAlignment="Center">
+                            <Label Content="箱号:"></Label>
+                            <TextBox Name="tx_fboxn" Width="150" Text="" Margin="5 0 0 0"></TextBox>
+                        </WrapPanel>
+
+                    </StackPanel>
+                </Border>
+
+                <DockPanel Grid.Row="1" Grid.Column="1" HorizontalAlignment="Left">
+                    <Button  Name="bt_fit"  Width="120" Height="30" Content="解绑箱子" DockPanel.Dock="Bottom" Click="bt_fit_Click">
+                        <Button.Background >
+                            <RadialGradientBrush >
+                                <GradientStop Color="#FFA8B5BF" Offset="1"/>
+                                <GradientStop Color="White" Offset="0.577"/>
+                                <GradientStop Color="White" Offset="0.121"/>
+                                <GradientStop Color="White"/>
+                            </RadialGradientBrush>
+                        </Button.Background>
+                    </Button>
+                </DockPanel>
+            </Grid>
+        </Border>
+
+        <Border Grid.Row="6" Grid.Column="1"  >
+            <Grid >
+                <Grid.RowDefinitions >
+                    <RowDefinition Height="30"></RowDefinition>
+                    <RowDefinition ></RowDefinition>
+                    <RowDefinition Height="10"></RowDefinition>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions >
+                    <ColumnDefinition></ColumnDefinition>
+                    <ColumnDefinition Width="200"></ColumnDefinition>
+                </Grid.ColumnDefinitions>
+                <Border Grid.Row="0" Grid.ColumnSpan="2" Background="#FFE1EAF2"  Width="200" HorizontalAlignment="Left" Margin="2 7 0 0" >
+                    <Label Content="分档接口" FontSize="12" HorizontalAlignment="Center"></Label>
+                </Border>
+              
+                <Border Grid.Row="1" Grid.Column="0">
+
+                    <StackPanel Orientation="Vertical">
+                        <WrapPanel Orientation="Horizontal" HorizontalAlignment="Center">
+                            <Label Content="箱号:"></Label>
+                            <TextBox Name="tx_gboxn" Width="150" Text="" Margin="5 0 0 0"></TextBox>
+                        </WrapPanel>
+
+                    </StackPanel>
+                </Border>
+
+                <DockPanel Grid.Row="1" Grid.Column="1" HorizontalAlignment="Left">
+                    <Button  Name="bt_gpackno"  Width="120" Height="30" Content="箱子分档" DockPanel.Dock="Bottom" Click="bt_gpackno_Click">
+                        <Button.Background >
+                            <RadialGradientBrush >
+                                <GradientStop Color="#FFA8B5BF" Offset="1"/>
+                                <GradientStop Color="White" Offset="0.577"/>
+                                <GradientStop Color="White" Offset="0.121"/>
+                                <GradientStop Color="White"/>
+                            </RadialGradientBrush>
+                        </Button.Background>
+                    </Button>
+                </DockPanel>
+            </Grid>
+        </Border>
+
+
+
+    </Grid>
+</Window>
