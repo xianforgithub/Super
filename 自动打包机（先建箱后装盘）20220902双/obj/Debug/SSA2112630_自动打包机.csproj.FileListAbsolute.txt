@@ -2785,3 +2785,6 @@ D:\users\S2110250138\桌面\自动打包机（先建箱后装盘）20220902双\o
 D:\users\S2110250138\桌面\自动打包机（先建箱后装盘）20220902双\obj\Debug\LWDBJ_自建_.Properties.Resources.resources
 D:\users\S2110250138\桌面\自动打包机（先建箱后装盘）20220902双\obj\Debug\SSA2112630_自动打包机.csproj.GenerateResource.Cache
 D:\users\S2110250138\桌面\自动打包机（先建箱后装盘）20220902双\obj\Debug\自动打包机.exe.licenses
+F:\Git\Super\自动打包机（先建箱后装盘）20220902双\bin\Debug\自动打包机.exe.config
+F:\Git\Super\自动打包机（先建箱后装盘）20220902双\obj\Debug\自动打包机.exe
+F:\Git\Super\自动打包机（先建箱后装盘）20220902双\obj\Debug\自动打包机.pdb
